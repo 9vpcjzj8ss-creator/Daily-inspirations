@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daily Words — Prototype</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header><h1>Daily Words — Prototype</h1></header>
+  <main>
+    <section id="creator" class="card">
+      <h2>Create a Quote</h2>
+      <textarea id="quoteText" placeholder="Type your quote or affirmation..."></textarea>
+
+      <div class="controls">
+        <label>Font
+          <select id="fontSelect">
+            <option value="system-ui">System</option>
+            <option value="'Georgia', serif">Serif (Georgia)</option>
+            <option value="'Courier New', monospace">Monospace</option>
+            <option value="'Brush Script MT', cursive">Script</option>
+          </select>
+        </label>
+
+        <label>Text size
+          <input type="range" id="fontSize" min="18" max="48" value="28">
+        </label>
+
+        <label>Text color
+          <input type="color" id="textColor" value="#111111">
+        </label>
+
+        <label>Background color
+          <input type="color" id="bgColor" value="#ffffff">
+        </label>
+      </div>
+
+      <div class="previewWrap">
+        <h3>Preview</h3>
+        <div id="preview" class="widget small"></div>
+      </div>
+
+      <div class="actions">
+        <button id="saveBtn">Save Quote</button>
+        <button id="setWidgetBtn">Set as Widget</button>
+        <button id="exportBtn">Export Quotes (JSON)</button>
+        <label class="rotateToggle"><input type="checkbox" id="rotateToggle"> Auto-rotate (hourly)</label>
+      </div>
+    </section>
+
+    <section id="library" class="card">
+      <h2>Your Quotes Library</h2>
+      <div id="quotesGrid"></div>
+    </section>
+
+    <section id="widgetArea" class="card">
+      <h2>Widget Preview (Always Visible)</h2>
+      <div id="liveWidget" class="widget large"></div>
+      <div class="widgetControls">
+        <button id="prevBtn">◀</button>
+        <button id="nextBtn">▶</button>
+        <button id="clearWidgetBtn">Clear Widget</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Prototype — Drop into Glitch (HTML/CSS/JS) to run.
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
